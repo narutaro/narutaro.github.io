@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Stuff On Tap</title>
+    <link>http://narutaro.github.io/tags/go/</link>
+    <description>Recent content in Go on Stuff On Tap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Apr 2016 11:44:12 -0700</lastBuildDate>
+    <atom:link href="http://narutaro.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>neo4j</title>
+      <link>http://narutaro.github.io/neo4j/</link>
+      <pubDate>Sun, 24 Apr 2016 11:44:12 -0700</pubDate>
+      
+      <guid>http://narutaro.github.io/neo4j/</guid>
+      <description>
+
+&lt;h1 id=&#34;yes-or-no:eade37d841f11012cd7ac61f774c411a&#34;&gt;Yes! or No!&lt;/h1&gt;
+
+&lt;p&gt;Gistlog supports github markdown style table. A table looks like this.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;ft-Aligned&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Center Aligned&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Right Aligned&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;col 3 is&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;some wordy text&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$1600&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;col 2 is&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;centered&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$12&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;zebra stripes&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;are neat&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
