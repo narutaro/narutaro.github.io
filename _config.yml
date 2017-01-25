@@ -1,8 +1,2 @@
-title: Drink beer write stuffs
-description: Don't even think of reading this blog without a beer in your hand
-google_analytics: 
-show_downloads: true
-theme: jekyll-theme-minimal
-
-gems:
-  - jekyll-mentions
+gem:
+	- jekyll-redirect-from
