@@ -1,4 +1,2 @@
-gems:
-	- jekyll-redirect-from
-
+gem: jekyll-redirect-from
 theme: jekyll-theme-cayman
