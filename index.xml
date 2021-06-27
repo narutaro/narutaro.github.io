@@ -14,7 +14,8 @@
       <pubDate>Sun, 27 Jun 2021 16:29:03 +0900</pubDate>
       
       <guid>http://narutaro.github.io/posts/lets-review-all-the-settings/</guid>
-      <description>TL;DR Good to go!</description>
+      <description>TL;DR Good to go!
+const tasks = [ { id: 1, name: &amp;#34;Soak in an Onsen&amp;#34;, isActive: true}, { id: 2, name: &amp;#34;Sing Karaoke&amp;#34;, isActive: true}, { id: 3, name: &amp;#34;See cherry blossom&amp;#34;, isActive: true}, ] </description>
     </item>
     
   </channel>

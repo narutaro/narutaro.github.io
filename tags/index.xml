@@ -6,6 +6,25 @@
     <description>Recent content in Tags on Yak Shaving</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/narutaro&#34;&gt;narutaro&lt;/a&gt; 2021</copyright><atom:link href="http://narutaro.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/narutaro&#34;&gt;narutaro&lt;/a&gt; 2021</copyright>
+    <lastBuildDate>Sun, 27 Jun 2021 16:29:03 +0900</lastBuildDate><atom:link href="http://narutaro.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sample</title>
+      <link>http://narutaro.github.io/tags/sample/</link>
+      <pubDate>Sun, 27 Jun 2021 16:29:03 +0900</pubDate>
+      
+      <guid>http://narutaro.github.io/tags/sample/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>http://narutaro.github.io/tags/test/</link>
+      <pubDate>Sun, 27 Jun 2021 16:29:03 +0900</pubDate>
+      
+      <guid>http://narutaro.github.io/tags/test/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
