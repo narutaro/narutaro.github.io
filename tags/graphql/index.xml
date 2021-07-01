@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>graphql on Yak Shaving</title>
-    <link>http://narutaro.github.io/tags/graphql/</link>
+    <link>https://narutaro.github.io/tags/graphql/</link>
     <description>Recent content in graphql on Yak Shaving</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://github.com/narutaro&#34;&gt;narutaro&lt;/a&gt; 2021</copyright>
-    <lastBuildDate>Sun, 27 Jun 2021 16:29:03 +0900</lastBuildDate><atom:link href="http://narutaro.github.io/tags/graphql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Jun 2021 16:29:03 +0900</lastBuildDate><atom:link href="https://narutaro.github.io/tags/graphql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Simple list view with Apollo</title>
-      <link>http://narutaro.github.io/posts/lets-review-all-the-settings/</link>
+      <link>https://narutaro.github.io/posts/lets-review-all-the-settings/</link>
       <pubDate>Sun, 27 Jun 2021 16:29:03 +0900</pubDate>
       
-      <guid>http://narutaro.github.io/posts/lets-review-all-the-settings/</guid>
+      <guid>https://narutaro.github.io/posts/lets-review-all-the-settings/</guid>
       <description>Introduction I&amp;rsquo;ve been playing around with GraphQL lately and that&amp;rsquo;s fun. After playing with GraphQL for a while, I thought I&amp;rsquo;d write about it in a series of articles.
 The best way to get started with GraphQL now is to start with these two great sites to grasp the concept.
  https://graphql.org/learn/ https://www.howtographql.com/  However, as soon as you follow these tutorials, you will start setting up the database and ORM.</description>
