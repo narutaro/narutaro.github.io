@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Lets Review All the Settings | Yak Shaving</title>
+<title>Simple list view with Apollo | Yak Shaving</title>
 
-<meta property='og:title' content='Lets Review All the Settings - Yak Shaving'>
-<meta property='og:description' content='TL;DR Good to go!
-const tasks = [ { id: 1, name: &#34;Soak in an Onsen&#34;, isActive: true}, { id: 2, name: &#34;Sing Karaoke&#34;, isActive: true}, { id: 3, name: &#34;See cherry blossom&#34;, isActive: true}, ] '>
+<meta property='og:title' content='Simple list view with Apollo - Yak Shaving'>
+<meta property='og:description' content='Introduction I&rsquo;ve been playing around with GraphQL lately and that&rsquo;s fun. After playing with GraphQL for a while, I thought I&rsquo;d write about it in a series of articles.
+The best way to get started with GraphQL now is to start with these two great sites to grasp the concept.
+ https://graphql.org/learn/ https://www.howtographql.com/  However, as soon as you follow these tutorials, you will start setting up the database and ORM.'>
 <meta property='og:url' content='http://narutaro.github.io/posts/lets-review-all-the-settings/'>
 <meta property='og:site_name' content='Yak Shaving'>
 <meta property='og:type' content='article'>
-    <meta property='og:image' content='https://user-images.githubusercontent.com/4873581/123530762-06ac6080-d739-11eb-95ef-ff20b50de605.png'><meta property='article:author' content='https://facebook.com/x'><meta property='article:section' content='Posts'><meta property='article:tag' content='test'><meta property='article:tag' content='sample'><meta property='article:published_time' content='2021-06-27T16:29:03&#43;09:00'><meta property='article:modified_time' content='2021-06-27T16:29:03&#43;09:00'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@narutaro'><meta name='twitter:creator' content='@narutaro'>
+    <meta property='og:image' content='https://user-images.githubusercontent.com/4873581/123530762-06ac6080-d739-11eb-95ef-ff20b50de605.png'><meta property='article:author' content='https://facebook.com/x'><meta property='article:section' content='Posts'><meta property='article:tag' content='graphql'><meta property='article:tag' content='apollo'><meta property='article:tag' content='javascript'><meta property='article:published_time' content='2021-06-27T16:29:03&#43;09:00'><meta property='article:modified_time' content='2021-06-27T16:29:03&#43;09:00'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@narutaro'><meta name='twitter:creator' content='@narutaro'>
 
 
 <link href="http://narutaro.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Yak Shaving">
@@ -39,7 +40,7 @@ const tasks = [ { id: 1, name: &#34;Soak in an Onsen&#34;, isActive: true}, { id
            width="74pt" height="46pt" viewBox="0 0 824 510"
            preserveAspectRatio="xMidYMid meet">
           <g transform="translate(0.000000,510.000000) scale(0.100000,-0.100000)"
-          fill="#000000" stroke="none">
+          fill="#4b371c" stroke="none">
           <path d="M2470 4639 c-305 -242 -565 -445 -577 -451 -15 -7 -67 -6 -187 6
           l-167 17 -62 -39 c-34 -22 -231 -151 -437 -288 -362 -239 -380 -250 -524 -306
           -82 -32 -152 -57 -157 -56 -4 2 31 98 78 213 l85 210 -58 373 c-39 249 -61
@@ -161,29 +162,86 @@ const tasks = [ { id: 1, name: &#34;Soak in an Onsen&#34;, isActive: true}, { id
     <div class="subtitle tags is-6 is-pulled-right">
       
       
-<a class="subtitle is-6" href="/tags/test/">#test</a>
+<a class="subtitle is-6" href="/tags/graphql/">#graphql</a>
 
 
 
   
-  | <a class="subtitle is-6" href="/tags/sample/">#sample</a>
+  | <a class="subtitle is-6" href="/tags/apollo/">#apollo</a>
+  
+  | <a class="subtitle is-6" href="/tags/javascript/">#javascript</a>
   
 
 
       
     </div>
     <h2 class="subtitle is-6">June 27, 2021</h2>
-    <h1 class="title">Lets Review All the Settings</h1>
+    <h1 class="title">Simple list view with Apollo</h1>
     
     <div class="content">
-      <h1 id="tldr">TL;DR</h1>
-<p>Good to go!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js:list.js" data-lang="js:list.js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tasks</span> <span style="color:#f92672">=</span> [
+      <h1 id="introduction">Introduction</h1>
+<p>I&rsquo;ve been playing around with GraphQL lately and that&rsquo;s fun. After playing with GraphQL for a while, I thought I&rsquo;d write about it in a series of articles.</p>
+<p>The best way to get started with GraphQL now is to start with these two great sites to grasp the concept.</p>
+<ul>
+<li><a href="https://graphql.org/learn/">https://graphql.org/learn/</a></li>
+<li><a href="https://www.howtographql.com/">https://www.howtographql.com/</a></li>
+</ul>
+<p>However, as soon as you follow these tutorials, you will start setting up the database and ORM. Personally, I think it&rsquo;s better to do this after you have a better understanding of GraphQL itself. GraphQL does not depend on database implementations due to its concept, so let&rsquo;s start with a simple in-memory database and move on. The goal of this article is to replace the <a href="https://zenn.dev/masaino/articles/c3316ab56413e3">this REST API based todo application</a> with GraphQL.</p>
+<p>Now, let&rsquo;s start with the installation.</p>
+<h1 id="install">Install</h1>
+<p>You anyway need the apollo server. Let&rsquo;s install.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir todo
+cd todo
+npm init -y
+
+npm install apollo-server
+</code></pre></div><h1 id="launch-with-the-template">Launch with the template</h1>
+<p>You can find the following template in the Apollo official site. Let&rsquo;s use it for a quick start.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ApolloServer</span>, <span style="color:#a6e22e">gql</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;apollo-server&#39;</span>);
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">typeDefs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gql</span><span style="color:#e6db74">`
+</span><span style="color:#e6db74">  type Task {
+</span><span style="color:#e6db74">    id: ID!
+</span><span style="color:#e6db74">    name: String!
+</span><span style="color:#e6db74">    isActive: Boolean!
+</span><span style="color:#e6db74">    createdAt: Int
+</span><span style="color:#e6db74">    updatedAt: Int
+</span><span style="color:#e6db74">    owner: String
+</span><span style="color:#e6db74">  }
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  type Query {
+</span><span style="color:#e6db74">    tasks: [Task]
+</span><span style="color:#e6db74">  }
+</span><span style="color:#e6db74">`</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tasks</span> <span style="color:#f92672">=</span> [
   { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Soak in an Onsen&#34;</span>, <span style="color:#a6e22e">isActive</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>},
   { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Sing Karaoke&#34;</span>, <span style="color:#a6e22e">isActive</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>},
   { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;See cherry blossom&#34;</span>, <span style="color:#a6e22e">isActive</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>},
 ]
-</code></pre></div>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resolvers</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">Query</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">tasks</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#a6e22e">tasks</span>,
+  },
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ApolloServer</span>({ <span style="color:#a6e22e">typeDefs</span>, <span style="color:#a6e22e">resolvers</span> });
+<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">listen</span>().<span style="color:#a6e22e">then</span>(({ <span style="color:#a6e22e">url</span> }) =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`🚀  Server ready at </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">url</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); 
+});
+</code></pre></div><p>Now, start the server</p>
+<pre><code>node index.js
+🚀  Server ready at http://localhost:4000/
+</code></pre><h1 id="query">Query</h1>
+<p>Let&rsquo;s try throwing a query to display a list of todo, as shown in <code>Query</code>, which is a simple query that returns the contents of the <code>tasks</code> array.</p>
+<p><img src="https://storage.googleapis.com/zenn-user-upload/54alid1fx8s9kuo2q1a2lu1h9kg7" alt=""></p>
+<p>When you connect to the Apollo server, you can use the query editor. The name of this query editor seems to be GraphQL Playground. You can see the schema and other information by default, and it&rsquo;s pretty easy to write with keyword completion listening.</p>
+<p>*You can use cmd+/ to comment out multiple selected lines at once (super convenient).
+*You can write multiple queries and choose which one to execute by clicking the play button (super convenient).</p>
+<h1 id="next-step">Next step</h1>
+<p>This time it was a list view, so next time I&rsquo;ll try searching from a list.</p>
+
       
       <div class="related">
 </div>

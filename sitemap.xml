@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://narutaro.github.io/posts/lets-review-all-the-settings/</loc>
+    <loc>http://narutaro.github.io/tags/apollo/</loc>
+    <lastmod>2021-06-27T16:29:03+09:00</lastmod>
+  </url><url>
+    <loc>http://narutaro.github.io/tags/graphql/</loc>
+    <lastmod>2021-06-27T16:29:03+09:00</lastmod>
+  </url><url>
+    <loc>http://narutaro.github.io/tags/javascript/</loc>
     <lastmod>2021-06-27T16:29:03+09:00</lastmod>
   </url><url>
     <loc>http://narutaro.github.io/posts/</loc>
     <lastmod>2021-06-27T16:29:03+09:00</lastmod>
   </url><url>
-    <loc>http://narutaro.github.io/tags/sample/</loc>
+    <loc>http://narutaro.github.io/posts/lets-review-all-the-settings/</loc>
     <lastmod>2021-06-27T16:29:03+09:00</lastmod>
   </url><url>
     <loc>http://narutaro.github.io/tags/</loc>
-    <lastmod>2021-06-27T16:29:03+09:00</lastmod>
-  </url><url>
-    <loc>http://narutaro.github.io/tags/test/</loc>
     <lastmod>2021-06-27T16:29:03+09:00</lastmod>
   </url><url>
     <loc>http://narutaro.github.io/</loc>

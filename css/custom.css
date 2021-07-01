@@ -24,3 +24,13 @@ body {
     font-size: 75%;
     padding: 1em;
 }
+
+.content h1 {
+  font-size: 1.7em;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
