@@ -32,7 +32,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* patch for code in bullet point*/
+/* liの中のインラインコードがスタイルされないのでパッチあてる */
 li > code {
   font-size: 89%;
   padding: 2px 4px;
@@ -45,4 +45,9 @@ li > code {
 
 .subtitle+.title {
   margin-bottom: 50px;
+}
+
+/* 単語を画面幅に等間隔にするとモバイルでは見にくいのでjustifyをunsetにする */
+.content p {
+    text-align: unset;
 }
