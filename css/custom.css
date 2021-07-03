@@ -42,3 +42,7 @@ li > code {
   background-color: #f8f8f8;
   color: #42464c;
 }
+
+.subtitle+.title {
+  margin-bottom: 50px;
+}
