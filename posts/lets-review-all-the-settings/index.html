@@ -9,7 +9,7 @@
 <meta property='og:title' content='Simple list view with Apollo - Yak Shaving'>
 <meta property='og:description' content='Introduction I&rsquo;ve been playing around with GraphQL lately and that&rsquo;s fun. After playing with GraphQL for a while, I thought I&rsquo;d write about it in a series of articles.
 The best way to get started with GraphQL now is to start with these two great sites to grasp the concept.
- https://graphql.org/learn/ https://www.howtographql.com/  However, as soon as you follow these tutorials, you will start setting up the database and ORM.'>
+ Introduction to GraphQL The Fullstack Tutorial for GraphQL  However, as soon as you follow these tutorials, you will start setting up the database and ORM.'>
 <meta property='og:url' content='https://narutaro.github.io/posts/lets-review-all-the-settings/'>
 <meta property='og:site_name' content='Yak Shaving'>
 <meta property='og:type' content='article'>
@@ -195,8 +195,8 @@ if (!doNotTrack) {
 <p>I&rsquo;ve been playing around with GraphQL lately and that&rsquo;s fun. After playing with GraphQL for a while, I thought I&rsquo;d write about it in a series of articles.</p>
 <p>The best way to get started with GraphQL now is to start with these two great sites to grasp the concept.</p>
 <ul>
-<li><a href="https://graphql.org/learn/">https://graphql.org/learn/</a></li>
-<li><a href="https://www.howtographql.com/">https://www.howtographql.com/</a></li>
+<li><a href="https://graphql.org/learn/">Introduction to GraphQL</a></li>
+<li><a href="https://www.howtographql.com/">The Fullstack Tutorial for GraphQL</a></li>
 </ul>
 <p>However, as soon as you follow these tutorials, you will start setting up the database and ORM. Personally, I think it&rsquo;s better to do this after you have a better understanding of GraphQL itself. GraphQL does not depend on database implementations due to its concept, so let&rsquo;s start with a simple in-memory database and move on. The goal of this article is to replace the <a href="https://zenn.dev/masaino/articles/c3316ab56413e3">this REST API based todo application</a> with GraphQL.</p>
 <p>Now, let&rsquo;s start with the installation.</p>
@@ -208,7 +208,7 @@ npm init -y
 
 npm install apollo-server
 </code></pre></div><h1 id="launch-with-the-template">Launch with the template</h1>
-<p>You can find the following template in the Apollo official site. Let&rsquo;s use it for a quick start.</p>
+<p>You can find the following template in the Apollo official site. Let&rsquo;s use the template with your <code>typeDefs</code> for a quick start.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ApolloServer</span>, <span style="color:#a6e22e">gql</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;apollo-server&#39;</span>);
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">typeDefs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gql</span><span style="color:#e6db74">`
