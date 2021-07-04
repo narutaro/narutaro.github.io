@@ -57,6 +57,12 @@ div.related > h3 {
   font-size: 1.7em;
 }
 
+/*
 div.related > ul {
+  font-size: 1em;
+}
+*/
+
+.related ul {
   font-size: 1em;
 }
