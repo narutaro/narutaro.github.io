@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Searching for an Item with Apollo | Yak Shaving</title>
+<title>Query to Search for an Item with Apollo | Yak Shaving</title>
 
-<meta property='og:title' content='Searching for an Item with Apollo - Yak Shaving'>
+<meta property='og:title' content='Query to Search for an Item with Apollo - Yak Shaving'>
 <meta property='og:description' content='Introduction Last time was to get list of todo from Apollo. This time I am going to add task search functionality by id.
 Code const { ApolloServer, gql } = require(&#39;apollo-server&#39;); const typeDefs = gql` type Task { id: ID! name: String! isActive: Boolean! createdAt: Int updatedAt: Int owner: String } type Query { tasks: [Task] task(id: ID!): Task # ❶ } `; const tasks = [ { id: 1, name: &#34;Soak in an Onsen&#34;, isActive: true}, { id: 2, name: &#34;Sing Karaoke&#34;, isActive: false}, { id: 3, name: &#34;See cherry blossom&#34;, isActive: true}, ] const resolvers = { Query: { tasks: () =&gt; tasks, task (parent, args, context, info) { // ❷  const { id } = args; return context.'>
 <meta property='og:url' content='https://narutaro.github.io/posts/search-an-item-with-apollo/'>
@@ -187,7 +187,7 @@ if (!doNotTrack) {
       
     </div>
     <h2 class="subtitle is-6">July 4, 2021</h2>
-    <h1 class="title">Searching for an Item with Apollo</h1>
+    <h1 class="title">Query to Search for an Item with Apollo</h1>
     
     <div class="content">
       <h1 id="introduction">Introduction</h1>
@@ -257,7 +257,7 @@ if (!doNotTrack) {
     name
   }
 }
-</code></pre></div><p>The return of the query is:</p>
+</code></pre></div><p>The response of the query is:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;data&#34;</span>: {
     <span style="color:#f92672">&#34;task&#34;</span>: {

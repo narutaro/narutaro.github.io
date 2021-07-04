@@ -189,7 +189,7 @@ if (!doNotTrack) {
         
       </div>
       <h2 class="subtitle is-6 date">July 4, 2021</h2>
-      <h1 class="title"><a href="https://narutaro.github.io/posts/search-an-item-with-apollo/">Searching for an Item with Apollo</a></h1>
+      <h1 class="title"><a href="https://narutaro.github.io/posts/search-an-item-with-apollo/">Query to Search for an Item with Apollo</a></h1>
       <div class="content">
         Introduction Last time was to get list of todo from Apollo. This time I am going to add task search functionality by id.
 Code const { ApolloServer, gql } = require(&#39;apollo-server&#39;); const typeDefs = gql` type Task { id: ID! name: String! isActive: Boolean! createdAt: Int updatedAt: Int owner: String } type Query { tasks: [Task] task(id: ID!): Task # ❶ } `; const tasks = [ { id: 1, name: &#34;Soak in an Onsen&#34;, isActive: true}, { id: 2, name: &#34;Sing Karaoke&#34;, isActive: false}, { id: 3, name: &#34;See cherry blossom&#34;, isActive: true}, ] const resolvers = { Query: { tasks: () =&gt; tasks, task (parent, args, context, info) { // ❷  const { id } = args; return context.
