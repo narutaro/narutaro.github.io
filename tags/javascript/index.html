@@ -189,7 +189,7 @@ if (!doNotTrack) {
         
       </div>
       <h2 class="subtitle is-6 date">July 10, 2021</h2>
-      <h1 class="title"><a href="https://narutaro.github.io/posts/update-tasks-with-mutaions/">Update Tasks With Mutaions</a></h1>
+      <h1 class="title"><a href="https://narutaro.github.io/posts/update-tasks-with-mutaions/">Update Tasks with Mutaions</a></h1>
       <div class="content">
         Introduction last time was search by id form the task list. This time, I am going to update the liset. It&rsquo;s called Mutation, which is a cool name in the GraphQL community :D
 Code const { ApolloServer, gql } = require(&#39;apollo-server&#39;); const typeDefs = gql` type Task { id: ID! name: String! isActive: Boolean! createdAt: Int updatedAt: Int owner: String } type Query { tasks: [Task] task(id: ID!): Task } # ❶ type Mutation { addTask(name: String!
