@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Update Tasks With Mutaions | Yak Shaving</title>
+
+<meta property='og:title' content='Update Tasks With Mutaions - Yak Shaving'>
+<meta property='og:description' content='Introduction last time was search by id form the task list. This time, I am going to update the liset. It&rsquo;s called Mutation, which is a cool name in the GraphQL community :D
+Code const { ApolloServer, gql } = require(&#39;apollo-server&#39;); const typeDefs = gql` type Task { id: ID! name: String! isActive: Boolean! createdAt: Int updatedAt: Int owner: String } type Query { tasks: [Task] task(id: ID!): Task } # ❶ type Mutation { addTask(name: String!'>
+<meta property='og:url' content='https://narutaro.github.io/posts/update-tasks-with-mutaions/'>
+<meta property='og:site_name' content='Yak Shaving'>
+<meta property='og:type' content='article'>
+    <meta property='og:image' content='https://user-images.githubusercontent.com/4873581/123530762-06ac6080-d739-11eb-95ef-ff20b50de605.png'><meta property='article:author' content='https://facebook.com/x'><meta property='article:section' content='Posts'><meta property='article:tag' content='graphql'><meta property='article:tag' content='apollo'><meta property='article:tag' content='javascript'><meta property='article:published_time' content='2021-07-10T10:13:47&#43;09:00'><meta property='article:modified_time' content='2021-07-10T10:13:47&#43;09:00'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@narutaro'><meta name='twitter:creator' content='@narutaro'>
+
+
+<link href="https://narutaro.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Yak Shaving">
+
+<link rel="stylesheet" href="/css/style.css"><link rel='stylesheet' href='https://narutaro.github.io/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://narutaro.github.io/posts/update-tasks-with-mutaions/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VG1JSZMTE8"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VG1JSZMTE8', { 'anonymize_ip': false });
+}
+</script>
+
+</head>
+<body>
+
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+
+        <a id="nav-anchor" class="nav-item" href="https://narutaro.github.io/">
+
+          
+          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+           width="74pt" height="46pt" viewBox="0 0 824 510"
+           preserveAspectRatio="xMidYMid meet">
+          <g transform="translate(0.000000,510.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
+          <path d="M2470 4639 c-305 -242 -565 -445 -577 -451 -15 -7 -67 -6 -187 6
+          l-167 17 -62 -39 c-34 -22 -231 -151 -437 -288 -362 -239 -380 -250 -524 -306
+          -82 -32 -152 -57 -157 -56 -4 2 31 98 78 213 l85 210 -58 373 c-39 249 -61
+          364 -65 345 -4 -15 -24 -174 -45 -352 l-37 -324 -154 -248 c-84 -136 -153
+          -252 -153 -259 0 -19 202 -350 214 -350 34 0 428 -50 436 -55 6 -3 10 -39 11
+          -78 1 -40 4 -109 7 -154 l7 -82 174 -197 c96 -108 186 -210 199 -226 20 -24
+          26 -46 34 -124 l9 -95 -87 -140 -87 -140 59 -162 60 -162 314 3 c173 1 347 5
+          386 8 l72 6 58 84 c32 46 59 83 60 81 2 -1 57 -254 123 -562 66 -307 124 -562
+          128 -565 5 -4 68 -22 140 -40 l133 -32 9 -37 c44 -166 49 -192 38 -197 -7 -2
+          -570 -5 -1252 -7 l-1240 -2 -6 -65 c-4 -36 -6 -66 -5 -67 1 -2 839 -28 1862
+          -59 l1859 -56 2075 51 c1141 28 2155 54 2253 58 l177 6 0 69 0 68 -276 0
+          c-228 0 -275 2 -271 14 3 7 99 141 213 297 114 156 209 291 211 299 2 8 30
+          226 63 483 l59 468 -181 657 c-99 361 -184 661 -188 665 -4 5 -252 112 -551
+          238 -299 127 -555 237 -568 246 -13 8 -344 263 -734 566 -391 302 -722 554
+          -736 559 -28 9 -2201 328 -2229 327 -9 0 -267 -198 -572 -440z m473 -309 l73
+          -315 148 -224 148 -225 -23 -40 c-13 -23 -52 -90 -88 -150 l-66 -109 -365
+          -118 c-201 -65 -371 -119 -379 -119 -7 0 -51 33 -96 73 -93 81 -89 71 -100
+          247 l-6 95 398 68 c219 38 399 70 401 72 2 2 -35 84 -83 183 l-86 180 15 324
+          c9 178 16 343 17 368 1 72 13 32 92 -310z m1072 -3580 c36 -146 68 -266 69
+          -267 4 -5 304 -33 344 -33 l32 0 0 177 c0 98 4 173 9 168 4 -6 36 -82 71 -170
+          35 -88 64 -161 64 -162 4 -7 359 -34 365 -27 4 5 37 89 72 187 42 117 66 171
+          70 160 3 -10 12 -87 19 -171 10 -117 17 -155 28 -159 18 -7 704 57 715 66 4 4
+          33 78 66 166 67 181 62 184 82 -47 8 -84 17 -138 23 -138 6 0 100 15 209 34
+          l198 33 66 -81 c37 -45 73 -88 80 -97 11 -13 10 -25 -5 -70 l-19 -54 -1396 -3
+          -1395 -2 -38 97 c-20 54 -43 113 -51 132 -7 19 -11 36 -9 38 2 2 54 -3 115
+          -11 62 -9 118 -16 126 -16 13 0 15 38 15 262 0 144 2 259 4 257 3 -2 35 -123
+          71 -269z m-928 -247 c110 -37 175 -63 177 -73 3 -8 8 -50 12 -92 l6 -78 -170
+          0 -171 0 -6 33 c-33 194 -41 267 -28 267 4 0 85 -26 180 -57z m4192 -65 c36
+          -28 69 -54 74 -58 4 -4 -4 -32 -18 -63 l-25 -57 -140 0 c-116 0 -140 2 -133
+          14 23 39 159 215 167 216 4 0 38 -23 75 -52z"/>
+          </g>
+          </svg>
+
+          
+          <h1 id="nav-heading" class="blog-title">Yak Shaving</h1>
+
+        </a>
+
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/narutaro'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="facebook" href='https://facebook.com/x'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/narutaro'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="instagram" href='https://instagram.com/x'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="email" href='mailto:x@gmail.com'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="codepen" href='https://codepen.io/x'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>
+    <line x1="12" y1="22" x2="12" y2="15.5"/>
+    <polyline points="22 8.5 12 15.5 2 8.5"/>
+    <polyline points="2 15.5 12 8.5 22 15.5"/>
+    <line x1="12" y1="2" x2="12" y2="8.5"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/graphql/">#graphql</a>
+
+
+
+  
+  | <a class="subtitle is-6" href="/tags/apollo/">#apollo</a>
+  
+  | <a class="subtitle is-6" href="/tags/javascript/">#javascript</a>
+  
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">July 10, 2021</h2>
+    <h1 class="title">Update Tasks With Mutaions</h1>
+    
+    <div class="content">
+      <h1 id="introduction">Introduction</h1>
+<p><a href="https://narutaro.github.io/posts/search-an-item-with-apollo/">last time</a> was search by id form the task list. This time, I am going to update the liset. It&rsquo;s called <code>Mutation</code>, which is a cool name in the GraphQL community :D</p>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ApolloServer</span>, <span style="color:#a6e22e">gql</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;apollo-server&#39;</span>);
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">typeDefs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gql</span><span style="color:#e6db74">`
+</span><span style="color:#e6db74">  type Task {
+</span><span style="color:#e6db74">    id: ID!
+</span><span style="color:#e6db74">    name: String!
+</span><span style="color:#e6db74">    isActive: Boolean!
+</span><span style="color:#e6db74">    createdAt: Int
+</span><span style="color:#e6db74">    updatedAt: Int
+</span><span style="color:#e6db74">    owner: String
+</span><span style="color:#e6db74">  }
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  type Query {
+</span><span style="color:#e6db74">    tasks: [Task]
+</span><span style="color:#e6db74">    task(id: ID!): Task
+</span><span style="color:#e6db74">  }
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  # ❶
+</span><span style="color:#e6db74">  type Mutation { 
+</span><span style="color:#e6db74">    addTask(name: String!): [Task]
+</span><span style="color:#e6db74">    completeTask(id: ID!): [Task]
+</span><span style="color:#e6db74">    deleteTask(id: ID!): [Task]
+</span><span style="color:#e6db74">  }
+</span><span style="color:#e6db74">`</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tasks</span> <span style="color:#f92672">=</span> [
+  { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Soak in an Onsen&#34;</span>, <span style="color:#a6e22e">isActive</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
+  { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Sing Karaoke&#34;</span>, <span style="color:#a6e22e">isActive</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> },
+  { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;See cherry blossom&#34;</span>, <span style="color:#a6e22e">isActive</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
+]
+
+<span style="color:#75715e">// ❷
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newId</span> <span style="color:#f92672">=</span> () =&gt; { <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">max</span>(...<span style="color:#a6e22e">tasks</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">t</span>) =&gt; <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">id</span>)) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> }
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resolvers</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">Query</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">tasks</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#a6e22e">tasks</span>,
+    <span style="color:#a6e22e">task</span> (<span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">args</span>, <span style="color:#a6e22e">context</span>, <span style="color:#a6e22e">info</span>) {
+      <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">id</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">args</span>;
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">find</span>((<span style="color:#a6e22e">task</span>) =&gt; <span style="color:#a6e22e">task</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">id</span>)
+    }
+  },
+  <span style="color:#75715e">// ❸
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Mutation</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">addTask</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">args</span>, <span style="color:#a6e22e">context</span>) =&gt; {
+      <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">push</span>({
+        <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newId</span>(),
+        ...<span style="color:#a6e22e">args</span>,
+        <span style="color:#a6e22e">isActive</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">createdAt</span><span style="color:#f92672">:</span> Math.<span style="color:#a6e22e">floor</span>(Date.<span style="color:#a6e22e">now</span>()<span style="color:#f92672">/</span><span style="color:#ae81ff">1000</span>),
+        <span style="color:#a6e22e">updatedAt</span><span style="color:#f92672">:</span> Math.<span style="color:#a6e22e">floor</span>(Date.<span style="color:#a6e22e">now</span>()<span style="color:#f92672">/</span><span style="color:#ae81ff">1000</span>)
+      }) 
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>
+    },
+    <span style="color:#a6e22e">completeTask</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">args</span>, <span style="color:#a6e22e">context</span>) =&gt; {
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">targetTask</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">t</span> =&gt; <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">id</span>)
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">targetTask</span>) {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;No such task&#34;</span>)
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">targetTask</span>)
+        <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>[<span style="color:#a6e22e">idx</span>].<span style="color:#a6e22e">isActive</span> <span style="color:#f92672">=</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>[<span style="color:#a6e22e">idx</span>].<span style="color:#a6e22e">isActive</span>; 
+        <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>[<span style="color:#a6e22e">idx</span>].<span style="color:#a6e22e">updatedAt</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Date.<span style="color:#a6e22e">now</span>()<span style="color:#f92672">/</span><span style="color:#ae81ff">1000</span>); 
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>
+      }
+
+    },
+    <span style="color:#a6e22e">deleteTask</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">task</span>, <span style="color:#a6e22e">context</span>) =&gt; {
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">targetTask</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">t</span> =&gt; <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">task</span>.<span style="color:#a6e22e">id</span>)
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">targetTask</span>) {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;No such task&#34;</span>)
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">targetTask</span>)
+        <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">idx</span>, <span style="color:#ae81ff">1</span>); 
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">db</span>
+      }
+
+    }
+  }
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ApolloServer</span>({
+  <span style="color:#a6e22e">typeDefs</span>,
+  <span style="color:#a6e22e">resolvers</span>,
+  <span style="color:#a6e22e">context</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">db</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">tasks</span> } 
+});
+
+<span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">listen</span>().<span style="color:#a6e22e">then</span>(({ <span style="color:#a6e22e">url</span> }) =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`🚀  Server ready at </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">url</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+});
+</code></pre></div><p>Updates from <a href="https://narutaro.github.io/posts/search-an-item-with-apollo/">last time</a> is as follows:</p>
+<ol>
+<li>Define the <code>Types</code> of  the Mutationの型.  I made all types as <code>[Task]</code> so that all of them retuns array of tasks.</li>
+<li>Function which generates an ID - not a good idea to scan the whole  task array ids but it shold be OK for this kinda quick PoC.</li>
+<li><a href="https://www.apollographql.com/docs/apollo-server/data/resolvers/"><code>Resolver</code></a> function which corresponds to the <code>Type</code> of ❶</li>
+</ol>
+<p>That&rsquo;s it. I think I&rsquo;m starting to understand the cycle of adding features. Add <code>Type</code> frist, then add  <code>Resolver</code> as either in<code>Query</code> or <code>Mutaion</code> section which corresponding to the <code>Type</code></p>
+<p>I repeated that cycle for <code>addTask()</code>,  <code>completeTask()</code>,  <code>deleteTask()</code></p>
+<h1 id="use-the-mutations">Use the mutations</h1>
+<p>Now you can do a full range of CRUD processing. Let&rsquo;s make request from your client. The sample requests are:</p>
+<pre><code># Write your query or mutation here
+
+mutation add {
+  addTask(name: &quot;Buy some milk&quot;) {
+    id
+    name
+  }
+}
+
+mutation delete {
+  deleteTask(id: 5) {
+    id
+    name
+  }
+}
+
+query list {
+  tasks {
+    id
+    name
+    isActive
+    createdAt
+    updatedAt
+    owner
+  }
+}
+
+mutation done {
+  completeTask(id: 4) {
+    id
+    name
+    isActive
+  }
+}
+</code></pre><p>You should be able to resolve these queries with you GraphQL Playground at <code>https://localhost:4000</code>. Well, that was easier than I thought it would be :D</p>
+<h1 id="next-step">Next step</h1>
+<p>Now that we have a complete set of CRUD functions as TODO, next time I would like to modify the <a href="https://zenn.dev/masaino/articles/080f998d73351f">this Svelte frontend (REST version)</a> that I wrote before and connect it to the GraphQL backend.</p>
+
+      
+      <div class="related">
+
+<h3>Similar articles:</h3>
+<ul>
+	
+	<li><a href="/posts/search-an-item-with-apollo/">Query to Search for an Item with Apollo</a></li>
+	
+	<li><a href="/posts/lets-review-all-the-settings/">Simple list view with Apollo</a></li>
+	
+</ul>
+
+</div>
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://github.com/narutaro">narutaro</a> 2021</p>
+    
+      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a> with tweaks.</p>
+    
+  </div>
+</section>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-VG1JSZMTE8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:'2474705',hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+</body>
+</html>
+
