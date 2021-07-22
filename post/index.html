@@ -8,10 +8,10 @@
 
 <meta property='og:title' content='Posts - Yak Shaving'>
 <meta property='og:description' content=''>
-<meta property='og:url' content='https://narutaro.github.io/posts/'>
+<meta property='og:url' content='https://narutaro.github.io/post/'>
 <meta property='og:site_name' content='Yak Shaving'>
 <meta property='og:type' content='website'>
-    <meta property='og:image' content='https://user-images.githubusercontent.com/4873581/123530762-06ac6080-d739-11eb-95ef-ff20b50de605.png'><meta property='article:section' content='Posts'><meta property='og:updated_time' content='2021-07-22T14:55:30&#43;09:00'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@narutaro'><meta name='twitter:creator' content='@narutaro'>
+    <meta property='og:image' content='https://user-images.githubusercontent.com/4873581/123530762-06ac6080-d739-11eb-95ef-ff20b50de605.png'><meta property='article:section' content='Post'><meta property='og:updated_time' content='2021-07-22T14:55:30&#43;09:00'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@narutaro'><meta name='twitter:creator' content='@narutaro'>
 
 
 <link href="https://narutaro.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Yak Shaving">
@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="canonical" href="https://narutaro.github.io/posts/">
+<link rel="canonical" href="https://narutaro.github.io/post/">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
@@ -181,40 +181,7 @@ if (!doNotTrack) {
   
   | <a class="subtitle is-6" href="/tags/apollo/">#apollo</a>
   
-  | <a class="subtitle is-6" href="/tags/javascript/">#javascript</a>
-  
-
-
-        
-      </div>
-      <h2 class="subtitle is-6 date">July 10, 2021</h2>
-      <h1 class="title"><a href="https://narutaro.github.io/posts/update-tasks-with-mutaions/">Update Tasks with Mutaions
-
-  
-    
-  
-</a></h1>
-      <div class="content">
-        Introduction last time was search by id form the task list. This time, I am going to update the liset. It&rsquo;s called Mutation, which is a cool name in the GraphQL community :D
-Code const { ApolloServer, gql } = require(&#39;apollo-server&#39;); const typeDefs = gql` type Task { id: ID! name: String! isActive: Boolean! createdAt: Int updatedAt: Int owner: String } type Query { tasks: [Task] task(id: ID!): Task } # ❶ type Mutation { addTask(name: String!
-        
-        <a class="button is-link" href="https://narutaro.github.io/posts/update-tasks-with-mutaions/" style="height:28px">
-          Read more
-        </a>
-        
-      </div>
-    </article>
-    
-    <article>
-      <div class="subtitle tags is-6 is-pulled-right">
-        
-        
-<a class="subtitle is-6" href="/tags/graphql/">#graphql</a>
-
-
-
-  
-  | <a class="subtitle is-6" href="/tags/apollo/">#apollo</a>
+  | <a class="subtitle is-6" href="/tags/svelte/">#svelte</a>
   
   | <a class="subtitle is-6" href="/tags/javascript/">#javascript</a>
   
@@ -222,54 +189,18 @@ Code const { ApolloServer, gql } = require(&#39;apollo-server&#39;); const typeD
 
         
       </div>
-      <h2 class="subtitle is-6 date">July 4, 2021</h2>
-      <h1 class="title"><a href="https://narutaro.github.io/posts/search-an-item-with-apollo/">Query to Search for an Item with Apollo
+      <h2 class="subtitle is-6 date">July 22, 2021</h2>
+      <h1 class="title"><a href="https://narutaro.github.io/post/connecting-svelte-to-apollo/">Connecting Svelte to Apollo
 
   
     
   
 </a></h1>
       <div class="content">
-        Introduction Last time was to get list of todo from Apollo. This time I am going to add task search functionality by id.
-Code const { ApolloServer, gql } = require(&#39;apollo-server&#39;); const typeDefs = gql` type Task { id: ID! name: String! isActive: Boolean! createdAt: Int updatedAt: Int owner: String } type Query { tasks: [Task] task(id: ID!): Task # ❶ } `; const tasks = [ { id: 1, name: &#34;Soak in an Onsen&#34;, isActive: true}, { id: 2, name: &#34;Sing Karaoke&#34;, isActive: false}, { id: 3, name: &#34;See cherry blossom&#34;, isActive: true}, ] const resolvers = { Query: { tasks: () =&gt; tasks, task (parent, args, context, info) { // ❷  const { id } = args; return context.
+        Introduction Well, the weather has been so nice that I&rsquo;ve been neglecting it on the weekends while BBQing and making pizzas, but I think it&rsquo;s time to start working on the client side. Now that we&rsquo;ve got the server side working, let&rsquo;s make a client that connects to it.
+Apollo&rsquo;s official website says that they don&rsquo;t know any client other than React, which is sad, but I&rsquo;ll try to make a TODO app client with Svelte.
         
-        <a class="button is-link" href="https://narutaro.github.io/posts/search-an-item-with-apollo/" style="height:28px">
-          Read more
-        </a>
-        
-      </div>
-    </article>
-    
-    <article>
-      <div class="subtitle tags is-6 is-pulled-right">
-        
-        
-<a class="subtitle is-6" href="/tags/graphql/">#graphql</a>
-
-
-
-  
-  | <a class="subtitle is-6" href="/tags/apollo/">#apollo</a>
-  
-  | <a class="subtitle is-6" href="/tags/javascript/">#javascript</a>
-  
-
-
-        
-      </div>
-      <h2 class="subtitle is-6 date">June 27, 2021</h2>
-      <h1 class="title"><a href="https://narutaro.github.io/posts/lets-review-all-the-settings/">Simple list view with Apollo
-
-  
-    
-  
-</a></h1>
-      <div class="content">
-        Introduction I&rsquo;ve been playing around with GraphQL lately and that&rsquo;s fun. After playing with GraphQL for a while, I thought I&rsquo;d write about it in a series of articles.
-The best way to get started with GraphQL now is to start with these two great sites to grasp the concept.
- Introduction to GraphQL The Fullstack Tutorial for GraphQL  However, as soon as you follow these tutorials, you will start setting up the database and ORM.
-        
-        <a class="button is-link" href="https://narutaro.github.io/posts/lets-review-all-the-settings/" style="height:28px">
+        <a class="button is-link" href="https://narutaro.github.io/post/connecting-svelte-to-apollo/" style="height:28px">
           Read more
         </a>
         

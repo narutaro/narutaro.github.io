@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>svelte on Yak Shaving</title>
+    <link>https://narutaro.github.io/tags/svelte/</link>
+    <description>Recent content in svelte on Yak Shaving</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/narutaro&#34;&gt;narutaro&lt;/a&gt; 2021</copyright>
+    <lastBuildDate>Thu, 22 Jul 2021 14:55:30 +0900</lastBuildDate><atom:link href="https://narutaro.github.io/tags/svelte/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connecting Svelte to Apollo</title>
+      <link>https://narutaro.github.io/post/connecting-svelte-to-apollo/</link>
+      <pubDate>Thu, 22 Jul 2021 14:55:30 +0900</pubDate>
+      
+      <guid>https://narutaro.github.io/post/connecting-svelte-to-apollo/</guid>
+      <description>Introduction Well, the weather has been so nice that I&amp;rsquo;ve been neglecting it on the weekends while BBQing and making pizzas, but I think it&amp;rsquo;s time to start working on the client side. Now that we&amp;rsquo;ve got the server side working, let&amp;rsquo;s make a client that connects to it.
+Apollo&amp;rsquo;s official website says that they don&amp;rsquo;t know any client other than React, which is sad, but I&amp;rsquo;ll try to make a TODO app client with Svelte.</description>
+    </item>
+    
+  </channel>
+</rss>

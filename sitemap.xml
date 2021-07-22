@@ -3,24 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://narutaro.github.io/tags/apollo/</loc>
-    <lastmod>2021-07-10T10:13:47+09:00</lastmod>
+    <lastmod>2021-07-22T14:55:30+09:00</lastmod>
+  </url><url>
+    <loc>https://narutaro.github.io/post/connecting-svelte-to-apollo/</loc>
+    <lastmod>2021-07-22T14:55:30+09:00</lastmod>
   </url><url>
     <loc>https://narutaro.github.io/tags/graphql/</loc>
-    <lastmod>2021-07-10T10:13:47+09:00</lastmod>
+    <lastmod>2021-07-22T14:55:30+09:00</lastmod>
   </url><url>
     <loc>https://narutaro.github.io/tags/javascript/</loc>
-    <lastmod>2021-07-10T10:13:47+09:00</lastmod>
+    <lastmod>2021-07-22T14:55:30+09:00</lastmod>
+  </url><url>
+    <loc>https://narutaro.github.io/post/</loc>
+    <lastmod>2021-07-22T14:55:30+09:00</lastmod>
+  </url><url>
+    <loc>https://narutaro.github.io/tags/svelte/</loc>
+    <lastmod>2021-07-22T14:55:30+09:00</lastmod>
+  </url><url>
+    <loc>https://narutaro.github.io/tags/</loc>
+    <lastmod>2021-07-22T14:55:30+09:00</lastmod>
+  </url><url>
+    <loc>https://narutaro.github.io/</loc>
+    <lastmod>2021-07-22T14:55:30+09:00</lastmod>
   </url><url>
     <loc>https://narutaro.github.io/posts/</loc>
     <lastmod>2021-07-10T10:13:47+09:00</lastmod>
   </url><url>
-    <loc>https://narutaro.github.io/tags/</loc>
-    <lastmod>2021-07-10T10:13:47+09:00</lastmod>
-  </url><url>
     <loc>https://narutaro.github.io/posts/update-tasks-with-mutaions/</loc>
-    <lastmod>2021-07-10T10:13:47+09:00</lastmod>
-  </url><url>
-    <loc>https://narutaro.github.io/</loc>
     <lastmod>2021-07-10T10:13:47+09:00</lastmod>
   </url><url>
     <loc>https://narutaro.github.io/posts/search-an-item-with-apollo/</loc>

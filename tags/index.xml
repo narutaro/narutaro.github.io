@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://github.com/narutaro&#34;&gt;narutaro&lt;/a&gt; 2021</copyright>
-    <lastBuildDate>Sat, 10 Jul 2021 10:13:47 +0900</lastBuildDate><atom:link href="https://narutaro.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2021 14:55:30 +0900</lastBuildDate><atom:link href="https://narutaro.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>apollo</title>
       <link>https://narutaro.github.io/tags/apollo/</link>
-      <pubDate>Sat, 10 Jul 2021 10:13:47 +0900</pubDate>
+      <pubDate>Thu, 22 Jul 2021 14:55:30 +0900</pubDate>
       
       <guid>https://narutaro.github.io/tags/apollo/</guid>
       <description></description>
@@ -20,7 +20,7 @@
     <item>
       <title>graphql</title>
       <link>https://narutaro.github.io/tags/graphql/</link>
-      <pubDate>Sat, 10 Jul 2021 10:13:47 +0900</pubDate>
+      <pubDate>Thu, 22 Jul 2021 14:55:30 +0900</pubDate>
       
       <guid>https://narutaro.github.io/tags/graphql/</guid>
       <description></description>
@@ -29,9 +29,18 @@
     <item>
       <title>javascript</title>
       <link>https://narutaro.github.io/tags/javascript/</link>
-      <pubDate>Sat, 10 Jul 2021 10:13:47 +0900</pubDate>
+      <pubDate>Thu, 22 Jul 2021 14:55:30 +0900</pubDate>
       
       <guid>https://narutaro.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>svelte</title>
+      <link>https://narutaro.github.io/tags/svelte/</link>
+      <pubDate>Thu, 22 Jul 2021 14:55:30 +0900</pubDate>
+      
+      <guid>https://narutaro.github.io/tags/svelte/</guid>
       <description></description>
     </item>
     
